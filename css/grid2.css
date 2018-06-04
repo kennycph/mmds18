@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "area2 area1"
+        "area2 area5"
+        "area2 area4"
+        "area2 area3";
+    grid-column-gap: .25em;
+    grid-row-gap: 1em;
+}
+
+.area1 {
+    grid-area: area1;
+    background-color: #f00;
+}
+.area2 {
+    grid-area: area2;
+    background-color: #ff0;
+}
+.area3 {
+    grid-area: area3;
+}
+.area4 {
+    grid-area: area4;
+}
+.area5 {
+    grid-area: area5;
+}

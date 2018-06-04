@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme:300|Lato:300');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'BioRhyme', serif;
+    background-color: #222;
+}
+/* WRAPPER */
+.wrapper {
+    background-color: #fff;
+    margin: 0 1em;
+    display: grid;/*
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-column-gap: .25em;
+    grid-row-gap: 1em;*/
+}
+.wrapper > * {
+}
+header, nav, main, footer {
+    margin: 0 1em;
+}
+header{
+    grid-area: header;
+    padding: 1em;
+}
+header img {
+    margin: 0 0 0 0; /* top right bottom left */
+    width: 8em;
+}
+nav{
+    grid-area: nav;
+}
+main{
+    grid-area: main;
+    padding: 0 1em;
+}
+main img {
+    width: 100%;
+}
+footer{
+    grid-area: footer;
+}
+/* wrapper END*/
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: blue;
+}
+
+a:active, a:hover {
+    color: red;
+}
+h1, h2, h3 {
+    line-height: 1.1em;
+    margin: 1.2em 0 .5em;
+}
+p {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 0.8em; /* px, em, rem, % */
+    line-height: 1.2em;
+    margin: 1em 0 .5em;
+}
+figcaption {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    font-size: .8em;
+    margin-bottom: .4em;
+}
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+ul > li {
+    display: inline;
+    text-align: center;
+    flex-grow: 1; /* Amount of the available space each item take up. Evenly. */
+}
+/* small */
+@media all and (max-width: 600px){
+    .wrapper {
+        grid-template-columns: repeat(4, 1fr); /* same as '1fr 1fr 1fr 1fr' */
+        grid-template-areas:
+        "header header header header"
+        "nav nav nav nav"
+        "main main main main"
+        "footer footer footer footer";
+    }
+}
+/* media */
+@media all and (min-width: 600px){
+    .wrapper {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas:
+        "header header header header header header header header"
+        "* * nav nav nav nav * *"
+        "* * main main main main * *"
+        "* * footer footer footer footer * *";
+    }
+}
+/* small */
+@media all and (min-width: 1200px){
+    .wrapper {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

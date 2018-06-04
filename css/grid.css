@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    border: 2px solid #f76707;
+    border-radius: 5px;
+    background-color: #fff4e6;
+}
+
+.wrapper > * {
+    border: 2px solid #ffa94d;
+    background-color: #ffd8a8;
+    padding: 1em;
+    color: #d9480f;
+}
+.wrapper div div {
+    background-color: #0f0;
+}
+
+@media all and (min-width: 700px){
+    .wrapper {
+        grid-template-columns: 1fr 400px 1fr;
+    }
+}
